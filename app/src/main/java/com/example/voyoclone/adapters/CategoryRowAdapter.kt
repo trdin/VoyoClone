@@ -1,6 +1,5 @@
 package com.example.voyoclone.adapters
 
-import FrontData
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.voyoclone.databinding.CategoryRowBinding
 import com.example.voyoclone.databinding.TopSliderBinding
+import com.example.voyoclone.models.FrontData
 
 class CategoryRowAdapter(private val context: Context, private val categories: MutableList<FrontData>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

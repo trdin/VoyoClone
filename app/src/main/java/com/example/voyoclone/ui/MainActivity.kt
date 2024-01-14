@@ -1,6 +1,5 @@
 package com.example.voyoclone.ui
 
-import FrontData
 import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
@@ -15,6 +14,7 @@ import com.example.voyoclone.R
 import com.example.voyoclone.adapters.CategoryRowAdapter
 import com.example.voyoclone.api.ApiManager
 import com.example.voyoclone.databinding.ActivityMainBinding
+import com.example.voyoclone.models.FrontData
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _binding: ActivityMainBinding

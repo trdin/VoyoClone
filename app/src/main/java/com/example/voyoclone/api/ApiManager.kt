@@ -1,6 +1,6 @@
 package com.example.voyoclone.api
 
-import ApiResponse
+import com.example.voyoclone.models.ApiResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

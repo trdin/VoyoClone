@@ -1,3 +1,4 @@
+package com.example.voyoclone.models
 data class ApiResponse(
     val data: Data,
     val errors: List<Error>?,

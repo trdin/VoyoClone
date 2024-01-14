@@ -1,6 +1,5 @@
 package com.example.voyoclone.adapters
 
-import FrontPayload
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,7 @@ import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import com.example.voyoclone.R
 import com.example.voyoclone.databinding.SliderItemBinding
+import com.example.voyoclone.models.FrontPayload
 import com.squareup.picasso.Picasso
 import timber.log.Timber
 
