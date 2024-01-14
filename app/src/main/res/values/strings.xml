@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VoyoClone</string>
+    <string name="category_row">Category Row</string>
+    <string name="content_image">Content image</string>
 </resources>
