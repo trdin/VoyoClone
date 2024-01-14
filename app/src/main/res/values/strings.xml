@@ -2,4 +2,9 @@
     <string name="app_name">VoyoClone</string>
     <string name="category_row">Category Row</string>
     <string name="content_image">Content image</string>
+    <string name="error_not_found">Resource not found</string>
+    <string name="error_internal_server">Internal Server Error</string>
+    <string name="error_unknown">Unknown error occurred</string>
+    <string name="error_no_internet">Internet connection interrupted</string>
+
 </resources>

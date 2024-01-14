@@ -1,11 +1,22 @@
 data class ApiResponse(
-    val data: Data
+    val data: Data,
+    val errors: List<Error>?,
 )
 
 data class Data(
-    val front: Front
+    val front: Front?
+)
+data class Error(
+    val message: ErrorMessage
 )
 
+data class ErrorMessage(
+    val code: String,
+    val error: Boolean,
+    val message: String,
+    val status: Int,
+    val tMessage: String
+)
 data class Front(
     val id: Int,
     val sectionId: Int,
@@ -65,48 +76,48 @@ open class FrontPayload(val __typename: String, val image: Image?, val title: St
 //    val section: Section
 //) : FrontPayload()
 //
-////data class VoyoCategoryType(
-////    val __typename: String,
-////    val title: String,
-////    val description: String,
-////    val url: String,
-////    val nbVideos: String,
-////    val id: Int,
-////    val objectType: String,
-////    val year: Int,
-////    val imdbRating: Int,
-////    val originalTitle: String,
-////    val voyoCategoryMeta: VoyoCategoryMeta,
-////    val startWith: StartWith,
-////    val image: Image,
-////    val portraitImage: PortraitImage,
-////    val wideImage: Image,
-////    val submenuImage: Image,
-////    val trailers: List<Trailer>
-////) : FrontPayload()
-////
-////data class LiveStreamType(
-////    val __typename: String,
-////    val id: Int,
-////    val url: String,
-////    val image: Image,
-////    val portraitImage: PortraitImage,
-////    val isNowOn: Boolean,
-////    val startAt: Long,
-////    val endAt: Long,
-////    val title: String,
-////    val mediaId: Int,
-////    val subtitle: String,
-////    val allowAVOD: Any?,
-////    val isSpecial: Boolean,
-////    val timeEndDescription: String,
-////    val timeStartDescription: String,
-////    val type: String,
-////    val description: String,
-////    val dayDescription: String,
-////    val percentDone: Int,
-////    val category: Any
-////) : FrontPayload()
+//data class VoyoCategoryType(
+//    val __typename: String,
+//    val title: String,
+//    val description: String,
+//    val url: String,
+//    val nbVideos: String,
+//    val id: Int,
+//    val objectType: String,
+//    val year: Int,
+//    val imdbRating: Int,
+//    val originalTitle: String,
+//    val voyoCategoryMeta: VoyoCategoryMeta,
+//    val startWith: StartWith,
+//    val image: Image,
+//    val portraitImage: PortraitImage,
+//    val wideImage: Image,
+//    val submenuImage: Image,
+//    val trailers: List<Trailer>
+//) : FrontPayload()
+//
+//data class LiveStreamType(
+//    val __typename: String,
+//    val id: Int,
+//    val url: String,
+//    val image: Image,
+//    val portraitImage: PortraitImage,
+//    val isNowOn: Boolean,
+//    val startAt: Long,
+//    val endAt: Long,
+//    val title: String,
+//    val mediaId: Int,
+//    val subtitle: String,
+//    val allowAVOD: Any?,
+//    val isSpecial: Boolean,
+//    val timeEndDescription: String,
+//    val timeStartDescription: String,
+//    val type: String,
+//    val description: String,
+//    val dayDescription: String,
+//    val percentDone: Int,
+//    val category: Any
+//) : FrontPayload()
 
 data class FrontPayloadWrapper(
     val payload: FrontPayload
