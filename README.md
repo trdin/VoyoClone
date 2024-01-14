@@ -17,6 +17,6 @@ VoyoClone is a small personal project created for learning Kotlin, with the goal
 - **Android Studio:** The project is developed using Android Studio, a powerful integrated development environment (IDE) for Android app development.
 
 
-  # Frontpage
+# Frontpage
   
 <img height="800px"  src="https://github.com/trdin/VoyoClone/assets/89972475/731e8810-ff14-4ad3-a5db-55b8b2bad8b0" />
