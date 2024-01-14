@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initCategoriesRV() {
-        val movieAdapter = CategoryRowAdapter(categories)
+        val movieAdapter = CategoryRowAdapter(this,categories)
         categoriesRV.adapter = movieAdapter
         categoriesRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
