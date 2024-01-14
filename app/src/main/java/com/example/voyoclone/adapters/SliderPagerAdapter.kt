@@ -25,10 +25,12 @@ class SliderPagerAdapter(private val context: Context, private val slideList: Li
         _binding = SliderItemBinding.inflate(context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
         val slideImg: ImageView = _binding!!.slideImg
         val slideText: TextView = _binding!!.slideTitle
+        val decriptionText: TextView = _binding!!.description
 
         val item = slideList[position]
         var image = ""
         slideText.text = item.title
+        decriptionText.text = item.description ?: ""
 
         if (item.portraitImage != null) {
             image = item.portraitImage.src ?: ""

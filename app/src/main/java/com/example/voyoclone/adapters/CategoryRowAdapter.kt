@@ -15,11 +15,6 @@ class CategoryRowAdapter(private val context: Context, private val categories: M
 
     private val VIEW_TYPE_SLIDER = 0
     private val VIEW_TYPE_CATEGORY_ROW = 1
-//    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val categoryName: TextView = itemView.findViewById(R.id.category_row_title)
-//        val horizontalRecyclerView: RecyclerView = itemView.findViewById(R.id.category_row_rv)
-//    }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder{
         val inflater = LayoutInflater.from(parent.context)
@@ -52,27 +47,6 @@ class CategoryRowAdapter(private val context: Context, private val categories: M
             }
         }
     }
-
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val category = categories[position]
-//
-//        holder.categoryName.text = category.name
-//
-//        val layoutManager = LinearLayoutManager(
-//            holder.horizontalRecyclerView.context,
-//            LinearLayoutManager.HORIZONTAL,
-//            false
-//        )
-//        holder.horizontalRecyclerView.layoutManager = layoutManager
-//
-//        var elements = category.payload
-//        //remove the first background image if there is one
-//        if (elements.isNotEmpty() && elements[0].__typename == "ImageType") {
-//            elements = elements.drop(1)
-//        }
-//        val horizontalAdapter = CategoryAdapter(elements)
-//        holder.horizontalRecyclerView.adapter = horizontalAdapter
-//    }
 
 
     override fun getItemViewType(position: Int): Int {

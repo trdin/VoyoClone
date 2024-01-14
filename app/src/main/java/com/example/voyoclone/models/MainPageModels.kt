@@ -6,6 +6,7 @@ data class ApiResponse(
 data class Data(
     val front: Front?
 )
+
 data class Error(
     val message: ErrorMessage
 )
@@ -17,6 +18,7 @@ data class ErrorMessage(
     val status: Int,
     val tMessage: String
 )
+
 data class Front(
     val id: Int,
     val sectionId: Int,
@@ -51,7 +53,13 @@ data class FrontData(
     val payload: List<FrontPayload>
 )
 
-open class FrontPayload(val __typename: String, val image: Image?, val title: String, val portraitImage: PortraitImage?)
+open class FrontPayload(
+    val __typename: String,
+    val image: Image?,
+    val title: String,
+    val portraitImage: PortraitImage?,
+    val description: String?
+)
 
 //data class VideoType(
 //    val __typename: String,
