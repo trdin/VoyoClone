@@ -6,5 +6,6 @@
     <string name="error_internal_server">Internal Server Error</string>
     <string name="error_unknown">Unknown error occurred</string>
     <string name="error_no_internet">Internet connection interrupted</string>
+    <string name="no_data">No data</string>
 
 </resources>

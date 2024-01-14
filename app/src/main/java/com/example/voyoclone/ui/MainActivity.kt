@@ -72,6 +72,9 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                         loadedPart++
+
+                    }else{
+                        Toast.makeText(this, R.string.no_data, Toast.LENGTH_LONG).show()
                     }
                 }
             },
@@ -97,7 +100,6 @@ class MainActivity : AppCompatActivity() {
         categoriesRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
-
     private fun isInternetAvailable(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
@@ -107,6 +109,5 @@ class MainActivity : AppCompatActivity() {
         return networkCapabilities?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
             ?: false
     }
-
 
 }

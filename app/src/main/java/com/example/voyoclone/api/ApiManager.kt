@@ -25,6 +25,7 @@ class ApiManager {
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                 if (response.isSuccessful) {
                     var body = response.body()
+                    //check for errors that were sent form the API
                     if(body?.errors != null){
                         val firstErrorMessage = body.errors?.firstOrNull()?.message
                         val statusCode = firstErrorMessage?.status ?: response.code()
