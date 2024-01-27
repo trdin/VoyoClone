@@ -7,5 +7,6 @@
     <string name="error_unknown">Unknown error occurred</string>
     <string name="error_no_internet">Internet connection interrupted</string>
     <string name="no_data">No data</string>
+    <string name="predvajaj">Predvajaj</string>
 
 </resources>

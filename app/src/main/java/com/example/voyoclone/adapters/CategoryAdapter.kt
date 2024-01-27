@@ -1,23 +1,20 @@
 package com.example.voyoclone.adapters
 
 
-import FrontPayload
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.voyoclone.R
-import com.example.voyoclone.databinding.ActivityMainBinding
 import com.example.voyoclone.databinding.CategoryItemBinding
+import com.example.voyoclone.models.FrontPayload
 
 import com.squareup.picasso.Picasso
 import timber.log.Timber
 
-class CategoryAdapter(var movieList: List<FrontPayload>) :
+class CategoryAdapter(var itemList: List<FrontPayload>) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     private lateinit var _binding: CategoryItemBinding
@@ -29,7 +26,7 @@ class CategoryAdapter(var movieList: List<FrontPayload>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = movieList[position]
+        val item = itemList[position]
         var image = ""
 
         if (item.portraitImage != null) {
@@ -50,7 +47,7 @@ class CategoryAdapter(var movieList: List<FrontPayload>) :
         }
     }
     override fun getItemCount(): Int {
-        return movieList.size
+        return itemList.size
     }
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         var movieImg: ImageView = ItemView.findViewById(R.id.category_item_image)
