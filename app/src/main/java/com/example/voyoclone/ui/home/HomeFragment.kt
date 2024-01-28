@@ -1,6 +1,7 @@
 package com.example.voyoclone.ui.home
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import com.example.voyoclone.api.ApiManager
 import com.example.voyoclone.databinding.FragmentHomeBinding
 import com.example.voyoclone.models.FrontData
 import com.example.voyoclone.ui.MainActivity
+import timber.log.Timber
 
 
 class HomeFragment : Fragment() {
@@ -51,8 +53,11 @@ class HomeFragment : Fragment() {
         categoriesRV = _binding!!.RVCategories
         nestedSV = _binding!!.NestedSv
 
-
-        getCategories()
+        if(categories.size == 0){
+            getCategories()
+        }else{
+            initCategoriesRV()
+        }
         initScrollEvent()
 
 
@@ -112,6 +117,7 @@ class HomeFragment : Fragment() {
                     errorMessage = R.string.error_no_internet
                 }
                 Toast.makeText(activity, errorMessage, Toast.LENGTH_LONG).show()
+                Timber.tag("Api Failure").d(throwable)
             })
     }
 

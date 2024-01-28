@@ -1,14 +1,21 @@
 package com.example.voyoclone.adapters
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.voyoclone.R
 import com.example.voyoclone.databinding.CategoryRowBinding
 import com.example.voyoclone.databinding.TopSliderBinding
 import com.example.voyoclone.models.FrontData
+import com.example.voyoclone.ui.MainActivity
+import com.google.gson.Gson
+import java.io.Serializable
 
 class CategoryRowAdapter(private val context: Context, private val categories: MutableList<FrontData>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -66,7 +73,6 @@ class CategoryRowAdapter(private val context: Context, private val categories: M
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(slides: FrontData) {
-
             val sliderPagerAdapter = SliderPagerAdapter(context, slides.payload)
             binding.sliderPager.adapter = sliderPagerAdapter
         }
@@ -92,6 +98,22 @@ class CategoryRowAdapter(private val context: Context, private val categories: M
                 elements = elements.drop(1)
             }
             val horizontalAdapter = CategoryAdapter(elements)
+            horizontalAdapter.setOnClickListener(
+                object:  CategoryAdapter.OnClickListener {
+                    override fun onClick(p0: View?, position: Int) {
+                        val gson = Gson()
+                        val frontDataString = gson.toJson(elements[position])
+
+                        val bundle = Bundle()
+                        bundle.putString("data", frontDataString)
+                        val navController = Navigation.findNavController(context as MainActivity, R.id.nav_host_fragment_activity_main)
+                        navController.navigate(R.id.action_navigation_home_to_detailsFragment2, bundle)
+
+                    }
+
+
+                }
+            )
             horizontalRecyclerView.adapter = horizontalAdapter
         }
 

@@ -5,4 +5,5 @@
     <color name="colorPrimary">#151c25</color>
     <color name="colorPrimaryDark">#151c25</color>
     <color name="colorAccent">#190865</color>
+    <color name="customRed">#FF0000</color>
 </resources>
