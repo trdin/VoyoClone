@@ -13,7 +13,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:elevation="4dp"/>
+        android:elevation="4dp">
+
+        <!-- Logo Image on the left -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            android:padding="2dp"
+            android:layout_gravity="start"
+            android:contentDescription="voyo logo"/>
+
+        <!-- Add other custom views or menu items as needed -->
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/blankFragment"
-        android:title="Home"
-        android:icon="@drawable/ic_home"/>
+        android:title="Iskanje"
+        android:icon="@drawable/search_icon"/>
 
 </menu>

@@ -25,6 +25,8 @@
             android:id="@+id/button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:backgroundTintMode="add"
+            android:backgroundTint="@android:color/holo_red_light"
             android:background="@android:color/holo_red_light"
             app:icon="@android:drawable/ic_media_play"
             app:iconSize="30dp"

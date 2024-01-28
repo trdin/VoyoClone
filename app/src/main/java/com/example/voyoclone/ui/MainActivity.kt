@@ -51,6 +51,17 @@ class MainActivity : AppCompatActivity() {
                 navController.popBackStack()
         })
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.detailsFragment-> {
+                    binding.logoImageView.visibility =  View.GONE
+                }
+                else -> {
+                    binding.logoImageView.visibility =  View.VISIBLE
+                }
+            }
+        }
+
     }
 
     public fun isInternetAvailable(context: Context): Boolean {
