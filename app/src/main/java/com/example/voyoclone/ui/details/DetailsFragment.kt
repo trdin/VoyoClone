@@ -6,10 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.voyoclone.R
+import com.example.voyoclone.databinding.FragmentDetailsBinding
+import com.example.voyoclone.models.FrontPayload
+import com.google.gson.Gson
+import com.squareup.picasso.Picasso
+import timber.log.Timber
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
 /**
  * A simple [Fragment] subclass.
  * Use the [DetailsFragment.newInstance] factory method to
@@ -20,6 +26,12 @@ class DetailsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    private var _binding: FragmentDetailsBinding? = null
+
+    private val binding get() = _binding!!
+
+    private var data: FrontPayload? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -33,8 +45,47 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_details, container, false)
+
+        _binding = FragmentDetailsBinding.inflate(inflater, container, false)
+
+
+
+        if (arguments != null) {
+            binding.title.text = arguments?.getString("typename")
+            val frontDataString = arguments?.getString("data")
+            Timber.tag("Details").d(frontDataString)
+
+            if (frontDataString != null) {
+                try {
+                    val gson = Gson()
+                    val frontData = gson.fromJson(frontDataString, FrontPayload::class.java)
+                    if (frontData != null) {
+                        data = frontData
+                        Timber.tag("Details").d("hi")
+                        binding.title.text = data?.title
+                        binding.description.text = data?.description
+                        var image = ""
+                        if (data?.portraitImage != null) {
+                            image = data!!.portraitImage?.src ?: ""
+
+                        } else if (data?.image != null) {
+                            image = data!!.image?.src ?: ""
+                        }
+                        image = image.replace("PLACEHOLDER", "298x441")
+                        Timber.tag("Details").d(image)
+                        Picasso.get().load(image).error(R.drawable.default_category_image).into(binding.DetailsImageView)
+
+                    }
+                } catch (t: Throwable) {
+                    Timber.tag("details").d(t)
+                }
+            }
+        }
+
+
+        return binding.root
     }
+
 
     companion object {
         /**

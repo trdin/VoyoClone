@@ -14,6 +14,8 @@ import com.example.voyoclone.databinding.CategoryRowBinding
 import com.example.voyoclone.databinding.TopSliderBinding
 import com.example.voyoclone.models.FrontData
 import com.example.voyoclone.ui.MainActivity
+import com.google.gson.Gson
+import java.io.Serializable
 
 class CategoryRowAdapter(private val context: Context, private val categories: MutableList<FrontData>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -99,7 +101,11 @@ class CategoryRowAdapter(private val context: Context, private val categories: M
             horizontalAdapter.setOnClickListener(
                 object:  CategoryAdapter.OnClickListener {
                     override fun onClick(p0: View?, position: Int) {
+                        val gson = Gson()
+                        val frontDataString = gson.toJson(elements[position])
+
                         val bundle = Bundle()
+                        bundle.putString("data", frontDataString)
                         val navController = Navigation.findNavController(context as MainActivity, R.id.nav_host_fragment_activity_main)
                         navController.navigate(R.id.action_navigation_home_to_detailsFragment2, bundle)
 
