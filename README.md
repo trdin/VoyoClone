@@ -24,5 +24,11 @@ VoyoClone is a small personal project created for learning Kotlin, with the goal
 
 # Frontpage
   
-<img height="800px"  src="https://github.com/trdin/VoyoClone/assets/89972475/731e8810-ff14-4ad3-a5db-55b8b2bad8b0" />
+<img height="800px"  src="https://github.com/trdin/VoyoClone/assets/89972475/d012fd3c-b9df-4b6a-8ce7-a1a4d016e428" />
+<img height="800px"  src="https://github.com/trdin/VoyoClone/assets/89972475/ac445641-287a-4f59-bd91-676882d585fa" />
+
+
+
+
+
 
